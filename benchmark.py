@@ -74,7 +74,7 @@ def run_benchmarks():
     eig_matrix = np.random.random((MATRIX_SIZE // 4, MATRIX_SIZE // 4))
 
     # Matrix multiplication
-    avg_time = benchmark(lambda: np.dot(a, b), iterations=5)
+    avg_time = benchmark(lambda: np.matmul(a, b), iterations=5)
     print(f"Multiplied two {a.shape[0]}x{a.shape[1]} matrices in {avg_time:.2f} s.")
 
     # Matrix inversion
