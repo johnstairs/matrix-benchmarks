@@ -1,0 +1,25 @@
+{
+    "name": "matrix-benchmarks",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "..",
+        "args": {
+            "PIXI_VERSION": "v0.62.0"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "jjjermiah.pixi-vscode",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "astral-sh.ty"
+            ]
+        }
+    },
+    "mounts": [
+        "source=${localWorkspaceFolderBasename}-pixi,target=${containerWorkspaceFolder}/.pixi,type=volume"
+    ],
+    "postCreateCommand": "sudo chown vscode .pixi && if [ ! -f pixi.toml ]; then cp /workspaces/matrix-benchmarks/pixi.toml .; fi && pixi install"
+}
