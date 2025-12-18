@@ -1,5 +1,23 @@
 # Matrix benchmarks
 
+
+## Summary
+
+| System                            | Backend  | Matmul (8192²) | Inverse (8192²) | SVD (4096²) | Cholesky (8192²) | Eigen (2048²) |
+|-----------------------------------|----------|----------------|-----------------|-------------|------------------|---------------|
+| Macbook Air M2 (8 cores ARM)      | OpenBLAS | 5.14s          | 8.77s           | 20.95s      | 1.90s            | 5.75s         |
+| DGX Spark (20 cores ARM)          | OpenBLAS | 2.78s          | **4.30s**       | **8.03s**   | **1.49s**        | **1.92s**     |
+| Azure NC24ads A100 (24 cores AMD) | MKL      | **1.55s**      | 4.65s           | 10.05s      | 2.49s            | 5.16s         |
+| Azure NC24ads A100 (24 cores AMD) | OpenBLAS | 1.62s          | 8.00s           | 17.89s      | 5.91s            | 4.37s         |
+| Azure F16s_v2 (16 cores Intel)    | MKL      | 2.11s          | 4.45s           | 11.89s      | 1.50s            | 3.67s         |
+| Azure F16s_v2 (16 cores Intel)    | OpenBLAS | 2.49s          | 5.98s           | 16.29s      | 2.63s            | 5.12s         |
+
+*Times in seconds (lower is better). Best results in **bold**.*
+
+---
+
+## Detailed Results
+
 ### Macbook Air M2 (8 cores - ARM)
 
 ```
@@ -60,4 +78,14 @@ Inverted a 8192x8192 matrix in 5.98 s.
 SVD of a 4096x4096 matrix in 16.29 s.
 Cholesky decomposition of a 8192x8192 matrix in 2.63 s.
 Eigendecomposition of a 2048x2048 matrix in 5.12 s.
+```
+
+## Running the bechmarks
+
+``` bash 
+pixi run -e openblas bench
+
+# or 
+
+pixi run -e mkl bench
 ```
