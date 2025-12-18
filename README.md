@@ -20,3 +20,23 @@ SVD of a 4096x2048 matrix in 1.69 s.
 Cholesky decomposition of a 8192x8192 matrix in 1.47 s.
 Eigendecomposition of a 2048x2048 matrix in 1.83 s.
 ```
+
+### Azure Standard_NC24ads_A100_v4 (24 cores)
+
+### MKL:
+```
+Dotted two 8192x8192 matrices in 1.55 s.
+Dotted two vectors of length 4194304 in 0.07 ms.
+SVD of a 4096x2048 matrix in 1.89 s.
+Cholesky decomposition of a 8192x8192 matrix in 2.46 s.
+Eigendecomposition of a 2048x2048 matrix in 5.24 s.
+```
+
+### OpenBLAS:
+```
+Dotted two 8192x8192 matrices in 1.67 s.
+Dotted two vectors of length 4194304 in 0.07 ms.
+SVD of a 4096x2048 matrix in 3.23 s.
+Cholesky decomposition of a 8192x8192 matrix in 5.89 s.
+Eigendecomposition of a 2048x2048 matrix in 4.28 s.
+```

@@ -2,12 +2,37 @@
 authors = ["John Stairs <jostairs@microsoft.com>"]
 channels = ["conda-forge"]
 name = "matrix-benchmarks"
-platforms = ["linux-aarch64"]
+platforms = ["linux-aarch64","linux-64", "osx-arm64"]
 version = "0.1.0"
 
 [tasks]
+bench = "python benchmark.py"
 
 [dependencies]
 python = ">=3.14.2,<3.15"
 numpy = ">=2.3.5,<3"
 ty = ">=0.0.3,<0.0.4"
+
+# Feature for MKL backend (Intel only - linux-64)
+[feature.mkl]
+platforms = ["linux-64"]
+
+[feature.mkl.dependencies]
+libblas = { version = "*", build = "*mkl*" }
+
+# Feature for OpenBLAS backend
+[feature.openblas.dependencies]
+libblas = { version = "*", build = "*openblas*" }
+
+# Feature for BLIS backend (x86_64 only)
+[feature.blis]
+platforms = ["linux-64"]
+
+[feature.blis.dependencies]
+libblas = { version = "*", build = "*blis*" }
+
+# Environments with different BLAS backends
+[environments]
+mkl = { features = ["mkl"], solve-group = "mkl" }
+openblas = { features = ["openblas"], solve-group = "openblas" }
+blis = { features = ["blis"], solve-group = "blis" }
