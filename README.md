@@ -11,7 +11,7 @@ Cholesky decomposition of a 8192x8192 matrix in 1.90 s.
 Eigendecomposition of a 2048x2048 matrix in 5.58 s.
 ```
 
-### DGX Spark (20 cores) 
+### DGX Spark (ARM 20 cores) 
 
 ```
 Dotted two 8192x8192 matrices in 2.78 s.
@@ -25,18 +25,18 @@ Eigendecomposition of a 2048x2048 matrix in 1.83 s.
 
 ### MKL:
 ```
-Dotted two 8192x8192 matrices in 1.55 s.
-Dotted two vectors of length 4194304 in 0.07 ms.
-SVD of a 4096x2048 matrix in 1.89 s.
-Cholesky decomposition of a 8192x8192 matrix in 2.46 s.
-Eigendecomposition of a 2048x2048 matrix in 5.24 s.
+Multiplied two 8192x8192 matrices in 1.55 s.
+Inverted a 8192x8192 matrix in 4.65 s.
+SVD of a 4096x4096 matrix in 10.05 s.
+Cholesky decomposition of a 8192x8192 matrix in 2.49 s.
+Eigendecomposition of a 2048x2048 matrix in 5.16 s.
 ```
 
 ### OpenBLAS:
 ```
-Dotted two 8192x8192 matrices in 1.67 s.
-Dotted two vectors of length 4194304 in 0.07 ms.
-SVD of a 4096x2048 matrix in 3.23 s.
-Cholesky decomposition of a 8192x8192 matrix in 5.89 s.
-Eigendecomposition of a 2048x2048 matrix in 4.28 s.
+Multiplied two 8192x8192 matrices in 1.62 s.
+Inverted a 8192x8192 matrix in 8.00 s.
+SVD of a 4096x4096 matrix in 17.89 s.
+Cholesky decomposition of a 8192x8192 matrix in 5.91 s.
+Eigendecomposition of a 2048x2048 matrix in 4.37 s.
 ```
