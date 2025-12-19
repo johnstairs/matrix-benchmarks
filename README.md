@@ -1,5 +1,18 @@
 # Matrix benchmarks
 
+A tiny, naive, and possibly misleading performance comparison of some numpy linear algebra operations using different BLAS implementations and run on a few different machines.
+
+To run, all you need is [Pixi]([url](https://pixi.sh/latest/)). Then:
+
+``` bash 
+pixi run -e openblas bench
+
+# or 
+
+pixi run -e mkl bench
+```
+
+The initial starting point for the beckmark code was this [blog post](https://meechos.github.io/MKL_vs_OpenBLAS). Copilot did most of the rest.
 
 ## Summary
 
@@ -78,14 +91,4 @@ Inverted a 8192x8192 matrix in 5.98 s.
 SVD of a 4096x4096 matrix in 16.29 s.
 Cholesky decomposition of a 8192x8192 matrix in 2.63 s.
 Eigendecomposition of a 2048x2048 matrix in 5.12 s.
-```
-
-## Running the bechmarks
-
-``` bash 
-pixi run -e openblas bench
-
-# or 
-
-pixi run -e mkl bench
 ```
