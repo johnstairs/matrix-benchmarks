@@ -33,6 +33,14 @@ The initial starting point for the beckmark code was this [blog post](https://me
 
 *Times in seconds (lower is better). Best results in **bold**.*
 
+![BLAS backend comparison](chart.png)
+
+To regenerate the chart after editing the numbers in `make_chart.py`:
+
+```bash
+pixi run chart
+```
+
 ---
 
 ## Detailed Results
