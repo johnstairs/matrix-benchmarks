@@ -35,7 +35,7 @@ The initial starting point for the beckmark code was this [blog post](https://me
 
 ![BLAS backend comparison](chart.png)
 
-To regenerate the chart after editing the numbers in `make_chart.py`:
+To regenerate the chart after editing the numbers in the table above:
 
 ```bash
 pixi run chart
